@@ -15,6 +15,8 @@ namespace Gestion_reservas_hotel
         public MainForm()
         {
             InitializeComponent();
+            
         }
+
     }
 }
