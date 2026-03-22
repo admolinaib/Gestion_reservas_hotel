@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Gestion_reservas_hotel.Services
 {
-    internal class GestorReservas
+    public class GestorReservas
     {
         private List<Reserva> reservas = new List<Reserva>();
 
@@ -35,6 +35,30 @@ namespace Gestion_reservas_hotel.Services
                     throw new Exception("La habitación ya está reservada en esas fechas");
                 }
             }
+        }
+
+        public void EliminarReserva(int numeroHabitacion, DateTime fecha)
+        {
+            Reserva reserva = reservas
+                .FirstOrDefault(r => r.NumeroHabitacion == numeroHabitacion && r.FechaReserva == fecha);
+
+            if (reserva == null)
+                throw new Exception("La reserva no existe");
+
+            reservas.Remove(reserva);
+        }
+
+        public void EditarReserva(Reserva actualizada)
+        {
+            Reserva existente = reservas
+                .FirstOrDefault(r => r.NumeroHabitacion == actualizada.NumeroHabitacion
+                                  && r.FechaReserva == actualizada.FechaReserva);
+
+            if (existente == null)
+                throw new Exception("La reserva no existe");
+
+            reservas.Remove(existente);
+            reservas.Add(actualizada);
         }
     }
 }

@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.cboTipoHabitacion = new System.Windows.Forms.ComboBox();
+            this.txtNoches = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDocumento = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -53,27 +53,27 @@
             this.label5.TabIndex = 19;
             this.label5.Text = "Fecha de ingreso:";
             // 
-            // dateTimePicker1
+            // dtpFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(184, 106);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 18;
+            this.dtpFecha.Location = new System.Drawing.Point(184, 106);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(200, 22);
+            this.dtpFecha.TabIndex = 18;
             // 
-            // comboBox1
+            // cboTipoHabitacion
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(184, 191);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 17;
+            this.cboTipoHabitacion.FormattingEnabled = true;
+            this.cboTipoHabitacion.Location = new System.Drawing.Point(184, 191);
+            this.cboTipoHabitacion.Name = "cboTipoHabitacion";
+            this.cboTipoHabitacion.Size = new System.Drawing.Size(121, 24);
+            this.cboTipoHabitacion.TabIndex = 17;
             // 
-            // textBox3
+            // txtNoches
             // 
-            this.textBox3.Location = new System.Drawing.Point(185, 148);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 16;
+            this.txtNoches.Location = new System.Drawing.Point(185, 148);
+            this.txtNoches.Name = "txtNoches";
+            this.txtNoches.Size = new System.Drawing.Size(100, 22);
+            this.txtNoches.TabIndex = 16;
             // 
             // label4
             // 
@@ -97,12 +97,12 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Tipo de habitación:";
             // 
-            // textBox2
+            // txtDocumento
             // 
-            this.textBox2.Location = new System.Drawing.Point(185, 67);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 13;
+            this.txtDocumento.Location = new System.Drawing.Point(185, 67);
+            this.txtDocumento.Name = "txtDocumento";
+            this.txtDocumento.Size = new System.Drawing.Size(100, 22);
+            this.txtDocumento.TabIndex = 13;
             // 
             // label2
             // 
@@ -126,12 +126,12 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Nombre del cliente:";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(185, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 10;
+            this.txtNombre.Location = new System.Drawing.Point(185, 28);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 22);
+            this.txtNombre.TabIndex = 10;
             // 
             // listBox1
             // 
@@ -147,12 +147,13 @@
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(295, 289);
+            this.button1.Location = new System.Drawing.Point(281, 287);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 37);
             this.button1.TabIndex = 21;
             this.button1.Text = "Agregar reserva";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // UCRegistrarReserva
             // 
@@ -162,17 +163,18 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.dtpFecha);
+            this.Controls.Add(this.cboTipoHabitacion);
+            this.Controls.Add(this.txtNoches);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtDocumento);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNombre);
             this.Name = "UCRegistrarReserva";
             this.Size = new System.Drawing.Size(690, 418);
+            this.Load += new System.EventHandler(this.UCRegistrarReserva_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,15 +183,15 @@
         #endregion
 
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.ComboBox cboTipoHabitacion;
+        private System.Windows.Forms.TextBox txtNoches;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDocumento;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button1;
     }

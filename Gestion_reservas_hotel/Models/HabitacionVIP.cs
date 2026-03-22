@@ -8,8 +8,8 @@ namespace Gestion_reservas_hotel.Models
 {
     public class HabitacionVIP : Reserva
     {
-        public HabitacionVIP(string nombre, int habitacion, DateTime fecha, int duracion)
-        : base(nombre, habitacion, fecha, duracion)
+        public HabitacionVIP(string nombre, int idCliente, DateTime fecha, int duracion)
+        : base(nombre, fecha, duracion)
         {
             TarifaPorNoche = 150000;
         }
