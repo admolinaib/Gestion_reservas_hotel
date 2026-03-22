@@ -24,6 +24,7 @@ namespace Gestion_reservas_hotel
         {
             UCRegistrarReserva uc = new UCRegistrarReserva(gestor);
             pnlContenedor.Controls.Clear();
+            uc.Dock = DockStyle.Fill;
             pnlContenedor.Controls.Add(uc);
         }
 
