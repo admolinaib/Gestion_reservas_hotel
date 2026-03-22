@@ -39,7 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnReservar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label5
@@ -67,6 +67,7 @@
             this.cboTipoHabitacion.Name = "cboTipoHabitacion";
             this.cboTipoHabitacion.Size = new System.Drawing.Size(121, 24);
             this.cboTipoHabitacion.TabIndex = 17;
+            this.cboTipoHabitacion.SelectedIndexChanged += new System.EventHandler(this.cboTipoHabitacion_SelectedIndexChanged);
             // 
             // txtNoches
             // 
@@ -74,6 +75,7 @@
             this.txtNoches.Name = "txtNoches";
             this.txtNoches.Size = new System.Drawing.Size(100, 22);
             this.txtNoches.TabIndex = 16;
+            this.txtNoches.TextChanged += new System.EventHandler(this.txtNoches_TextChanged);
             // 
             // label4
             // 
@@ -142,25 +144,25 @@
             this.listBox1.Size = new System.Drawing.Size(233, 196);
             this.listBox1.TabIndex = 20;
             // 
-            // button1
+            // btnReservar
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(281, 287);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 37);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Agregar reserva";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnReservar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnReservar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReservar.ForeColor = System.Drawing.Color.White;
+            this.btnReservar.Location = new System.Drawing.Point(281, 287);
+            this.btnReservar.Name = "btnReservar";
+            this.btnReservar.Size = new System.Drawing.Size(122, 37);
+            this.btnReservar.TabIndex = 21;
+            this.btnReservar.Text = "Agregar reserva";
+            this.btnReservar.UseVisualStyleBackColor = true;
+            this.btnReservar.Click += new System.EventHandler(this.btnReservar_Click);
             // 
             // UCRegistrarReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnReservar);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dtpFecha);
@@ -193,6 +195,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReservar;
     }
 }

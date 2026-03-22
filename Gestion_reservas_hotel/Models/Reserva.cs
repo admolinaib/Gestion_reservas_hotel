@@ -15,10 +15,11 @@ namespace Gestion_reservas_hotel.Models
         public int DuracionEstadia { get; set; }
         public double TarifaPorNoche { get; set; }
 
-        protected Reserva(string nombre, int idCliente, DateTime fecha, int duracion)
+        protected Reserva(string nombre, int idCliente, int habitacion, DateTime fecha, int duracion)
         {
             NombreCliente = nombre;
             DocumentoCliente = idCliente;
+            NumeroHabitacion = habitacion;
             FechaReserva = fecha;
             DuracionEstadia = duracion;
 
@@ -44,6 +45,9 @@ namespace Gestion_reservas_hotel.Models
 
             if (FechaReserva == default)
                 throw new Exception("Fecha inválida");
+
+            if (FechaReserva.Date < DateTime.Today)
+                throw new Exception("No se pueden hacer reservas en fechas pasadas");
         }
     }
 }

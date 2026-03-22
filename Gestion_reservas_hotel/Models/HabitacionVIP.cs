@@ -8,8 +8,8 @@ namespace Gestion_reservas_hotel.Models
 {
     public class HabitacionVIP : Reserva
     {
-        public HabitacionVIP(string nombre, int idCliente, DateTime fecha, int duracion)
-        : base(nombre, fecha, duracion)
+        public HabitacionVIP(string nombre, int idCliente, int habitacion, DateTime fecha, int duracion)
+        : base(nombre, idCliente, habitacion, fecha, duracion)
         {
             TarifaPorNoche = 150000;
         }
@@ -24,7 +24,7 @@ namespace Gestion_reservas_hotel.Models
         public override double AplicarDescuento(double total)
         {
             if (DuracionEstadia > 5)
-                return total * 0.20;
+                return total - (total * 0.20);
 
             return total;
         }
