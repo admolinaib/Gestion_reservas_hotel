@@ -93,9 +93,9 @@ namespace Gestion_reservas_hotel.Forms
             {
                 UCRegistrarReserva uc = new UCRegistrarReserva(gestor, seleccionada);
 
-                main.Controls["pnlContenedor"].Controls.Clear();
+                main.pnlContenedor.Controls.Clear();
                 uc.Dock = DockStyle.Fill;
-                main.Controls["pnlContenedor"].Controls.Add(uc);
+                main.pnlContenedor.Controls.Add(uc);
             }
         }
         private void cboOrden_SelectedIndexChanged(object sender, EventArgs e)

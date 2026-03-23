@@ -160,7 +160,7 @@
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.Panel pnlContenedor;
+        public System.Windows.Forms.Panel pnlContenedor;
     }
 }
 
