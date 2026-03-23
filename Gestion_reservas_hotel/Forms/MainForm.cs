@@ -1,4 +1,5 @@
-﻿using Gestion_reservas_hotel.Services;
+﻿using Gestion_reservas_hotel.Forms;
+using Gestion_reservas_hotel.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +31,11 @@ namespace Gestion_reservas_hotel
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
+            UCConsultarReservas uc2 = new UCConsultarReservas(gestor);
 
+            pnlContenedor.Controls.Clear();
+            pnlContenedor.Controls.Add(uc2);
+            uc2.Dock = DockStyle.Fill;
         }
     }
 }

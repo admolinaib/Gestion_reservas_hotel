@@ -91,14 +91,21 @@ namespace Gestion_reservas_hotel.Services
 
                 if (!ocupada)
                 {
-                    Reserva temp;
-                        
-                    if (tipo == "Estándar")
-                        temp = new HabitacionEstandar("temp", 0, num, fecha, duracion);
-                    else
-                        temp = new HabitacionVIP("temp", 0, num, fecha, duracion);
+                    double precio;
 
-                    double precio = temp.CalcularCostoTotal();
+                    if (tipo == "Estándar")
+                    {
+                        precio = 80000 * duracion; 
+                    }
+                    else 
+                    {
+                        double total = 150000 * duracion; 
+
+                        if (duracion > 5)
+                            total -= total * 0.20;
+
+                        precio = total;
+                    }
 
                     disponibles.Add(new HabitacionDisponible
                     {
@@ -109,6 +116,11 @@ namespace Gestion_reservas_hotel.Services
             }
 
             return disponibles;
+        }
+
+        public List<Reserva> ObtenerReservas()
+        {
+            return reservas;
         }
     }
 }

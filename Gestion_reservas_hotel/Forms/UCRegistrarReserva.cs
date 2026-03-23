@@ -15,21 +15,47 @@ namespace Gestion_reservas_hotel
     public partial class UCRegistrarReserva : UserControl
     {
         private GestorReservas gestor;
-
+        private Reserva reservaEditar = null;
         public UCRegistrarReserva(GestorReservas gestorReservas)
         {
             InitializeComponent();
             gestor = gestorReservas;
         }
+        public UCRegistrarReserva(GestorReservas gestorReservas, Reserva reserva)
+        {
+            InitializeComponent();
+            gestor = gestorReservas;
+
+            reservaEditar = reserva;
+        }
 
         private void UCRegistrarReserva_Load(object sender, EventArgs e)
         {
+            cboTipoHabitacion.Items.Clear();
             cboTipoHabitacion.Items.Add("Estándar");
             cboTipoHabitacion.Items.Add("VIP");
 
+            if (reservaEditar != null)
+            {
+                txtNombre.Text = reservaEditar.NombreCliente;
+                txtDocumento.Text = reservaEditar.DocumentoCliente.ToString();
+                txtNoches.Text = reservaEditar.DuracionEstadia.ToString();
+                dtpFecha.Value = reservaEditar.FechaReserva;
+
+                cboTipoHabitacion.SelectedItem = reservaEditar is HabitacionVIP ? "VIP" : "Estándar";
+
+                foreach (HabitacionDisponible h in listBox1.Items)
+                {
+                    if (h.Numero == reservaEditar.NumeroHabitacion)
+                    {
+                        listBox1.SelectedItem = h;
+                        break;
+                    }
+                }
+            }
+
             dtpFecha.MinDate = DateTime.Today;
         }
-
         private void btnReservar_Click(object sender, EventArgs e)
         {
             try
@@ -81,8 +107,14 @@ namespace Gestion_reservas_hotel
 
                 nueva.DocumentoCliente = documento;
 
+                if (reservaEditar != null)
+                {
+                    gestor.EliminarReserva(reservaEditar.NumeroHabitacion, reservaEditar.FechaReserva);
+                }
+
                 gestor.AgregarReserva(nueva);
 
+                CargarDisponibilidad();
                 MessageBox.Show("Reserva agregada correctamente");
 
             }
@@ -95,7 +127,6 @@ namespace Gestion_reservas_hotel
         {
             CargarDisponibilidad();
         }
-
         private void txtNoches_TextChanged(object sender, EventArgs e)
         {
             CargarDisponibilidad();
@@ -111,6 +142,9 @@ namespace Gestion_reservas_hotel
             if (!int.TryParse(txtNoches.Text, out duracion))
                 return;
 
+            if (duracion <= 1)
+                return;
+
             if (string.IsNullOrEmpty(cboTipoHabitacion.Text))
                 return;
 
@@ -123,5 +157,6 @@ namespace Gestion_reservas_hotel
             listBox1.DataSource = disponibles;
         }
 
+        
     }
 }

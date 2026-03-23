@@ -30,7 +30,6 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.cboTipoHabitacion = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNoches = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cboTipoHabitacion = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnReservar = new System.Windows.Forms.Button();
@@ -94,15 +94,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(405, 288);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // cboTipoHabitacion
-            // 
-            this.cboTipoHabitacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboTipoHabitacion.FormattingEnabled = true;
-            this.cboTipoHabitacion.Location = new System.Drawing.Point(205, 231);
-            this.cboTipoHabitacion.Name = "cboTipoHabitacion";
-            this.cboTipoHabitacion.Size = new System.Drawing.Size(197, 24);
-            this.cboTipoHabitacion.TabIndex = 44;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -121,6 +112,7 @@
             this.txtNoches.Name = "txtNoches";
             this.txtNoches.Size = new System.Drawing.Size(197, 22);
             this.txtNoches.TabIndex = 42;
+            this.txtNoches.TextChanged += new System.EventHandler(this.txtNoches_TextChanged);
             // 
             // label4
             // 
@@ -140,6 +132,7 @@
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(197, 22);
             this.dtpFecha.TabIndex = 40;
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // label5
             // 
@@ -191,6 +184,16 @@
             this.label1.TabIndex = 35;
             this.label1.Text = "Nombre del cliente:";
             // 
+            // cboTipoHabitacion
+            // 
+            this.cboTipoHabitacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboTipoHabitacion.FormattingEnabled = true;
+            this.cboTipoHabitacion.Location = new System.Drawing.Point(205, 231);
+            this.cboTipoHabitacion.Name = "cboTipoHabitacion";
+            this.cboTipoHabitacion.Size = new System.Drawing.Size(197, 24);
+            this.cboTipoHabitacion.TabIndex = 44;
+            this.cboTipoHabitacion.SelectedIndexChanged += new System.EventHandler(this.cboTipoHabitacion_SelectedIndexChanged);
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
@@ -215,7 +218,7 @@
             this.listBox1.Location = new System.Drawing.Point(3, 30);
             this.listBox1.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(267, 222);
+            this.listBox1.Size = new System.Drawing.Size(267, 221);
             this.listBox1.TabIndex = 35;
             // 
             // btnReservar
@@ -232,6 +235,7 @@
             this.btnReservar.TabIndex = 36;
             this.btnReservar.Text = "Agregar reserva";
             this.btnReservar.UseVisualStyleBackColor = true;
+            this.btnReservar.Click += new System.EventHandler(this.btnReservar_Click);
             // 
             // UCRegistrarReserva
             // 
